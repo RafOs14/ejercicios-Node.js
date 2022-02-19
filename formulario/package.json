@@ -1,0 +1,17 @@
+{
+  "name": "formulario",
+  "version": "1.0.0",
+  "description": "Ejercicio Node sobre manejo de peticiones",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rafael Lacuesta",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15"
+  }
+}
