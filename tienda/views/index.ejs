@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tienda</h1>
+    <p>
+        <strong>Nombre:</strong>  <%=datos.nombre%>
+    </p>
+    <br>
+    <p>
+       <strong>Direccion:</strong> <%=datos.direccion%>
+    </p>
+    <br>
+    <p>
+        <strong>Telefono:</strong>
+        <ul>
+            <% for(let i=0;i<datos.telefonos.length;i++) { %>
+                <li><%=datos.telefonos[i]%></li>
+            <% } %>
+        </ul>
+    </p>
+</body>
+</html>
