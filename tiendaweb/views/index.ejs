@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Inventario</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h1>Productos</h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th><a href="/?orden=id">id</a></th>
+                    <th><a href="/?orden=nombre">Nombre</a></th>
+                    <th><a href="/?orden=cantidad">Cantidad</a></th>
+                    <th><a href="/?orden=precio">Precio</a></th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(let i=0; i<productos.length; i++) { %>
+                <tr>
+                    <td>
+                        <%=productos[i].id%>
+                    </td>
+                    <td>
+                        <%=productos[i].nombre%>
+                    </td>
+                    <td>
+                        <%=productos[i].cantidad%>
+                    </td>
+                    <td>
+                        <%=productos[i].precio%>
+                    </td>
+                    <td>
+                        <a href="/eliminar?id=<%=productos[i].id%>" onclick="return confirm('¿Está seguro de eliminar el producto: <%=productos[i].nombre%>?')">Eliminar</a>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+
+        <h6>Cantidad de registros: <%=productos.length%></h6>
+
+        <hr>
+
+        <h2>Agregar Producto</h2>
+        <hr>
+        <form action="agregar" method="post">
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control" name="nombre" required="true">
+                <label for="cantidad">Cantidad</label>
+                <input type="number" class="form-control" name="cantidad" required="true">
+                <label for="precio">Precio</label>
+                <input type="number" class="form-control" name="precio" required="true">
+                <br>
+                <input type="submit" class="btn btn-primary" value="Agregar">
+            </div>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>
